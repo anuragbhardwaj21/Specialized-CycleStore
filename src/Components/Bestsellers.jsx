@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from "axios"
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 const getData = (setData, setLoading)=>{
     axios.get(`https://specialized-bike-json-server.onrender.com/products?_page=2&_limit=3`)

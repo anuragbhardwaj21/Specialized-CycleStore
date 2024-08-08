@@ -65,7 +65,6 @@ export default function ProductPage() {
     setSorting(e.target.value);
   };
 
-  // Category Filters
   let [categoryFilter, setCategoryFilter] = useState([]);
   const [priceRangeFilter, setPriceRangeFilter] = useState("");
   const [discountFilter, setDiscountFilter] = useState("");
@@ -125,7 +124,7 @@ export default function ProductPage() {
     categoryFilter,
     priceRangeFilter,
     colorFilter,
-    discountFilter,
+    discountFilter,totalPages,dispatch
   ]);
 
   const isError = useSelector((store) => {

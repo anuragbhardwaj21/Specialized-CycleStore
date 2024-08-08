@@ -21,7 +21,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect, useRef, useState } from "react";
 import Logo from "../Images/Mainlogo.png";
-import { EmailIcon, PhoneIcon, Search2Icon } from "@chakra-ui/icons";
+import { Search2Icon } from "@chakra-ui/icons";
 import wishIcon from "../Images/Wishlist icon.png";
 import cartIcon from "../Images/CartIcon.png";
 import accountIcon from "../Images/AccountIcon.png";
@@ -77,12 +77,12 @@ const Navbar = () => {
     return () => {
       clearTimeout(timeout.current);
     };
-  }, [searchQuery]);
+  }, [searchQuery,dispatch]);
 
   useEffect(() => {
     dispatch(getCartProducts);
     dispatch(getWishList);
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     document.addEventListener("click", handleClick);
@@ -90,9 +90,8 @@ const Navbar = () => {
       document.removeEventListener("click", handleClick);
     };
   }, []);
-  const handleClick = (event) => {
+  function handleClick(event) {
     dispatch(resetDebouncing);
-    // alert('Clicked!');
   };
   return (
     <>
